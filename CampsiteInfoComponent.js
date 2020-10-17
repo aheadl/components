@@ -47,7 +47,7 @@ renderComments(comments){
 render(){
     //campsite state passed from DirectoryComponent and is converted to props in this classed
 
-    if (this.props.campsite) {
+    if (this.props.campsite)  {
         return (
             <div className="container">
                 <div className="row">
