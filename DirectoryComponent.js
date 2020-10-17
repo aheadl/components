@@ -3,40 +3,17 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 're
 import CampsiteInfo from './CampsiteInfoComponent';
 
 class Directory extends Component {
-    constructor(props) {
+    
+    constructor(props){
         super(props);
-        this.state = {
-            
-            selectedCampsite: null
-        };
-
     }
-
-    onCampsiteSelect(campsite) {
-        this.setState({selectedCampsite: campsite});
-    }
-
-    // renderSelectedCampsite(campsite) {
-    //     if (campsite) {
-    //         return (
-    //             <Card>
-    //                 <CardImg top src={campsite.image} alt={campsite.name} />
-    //                 <CardBody>
-    //                     <CardTitle>{campsite.name}</CardTitle>
-    //                     <CardText>{campsite.description}</CardText>
-    //                 </CardBody>
-    //             </Card>
-    //         );
-    //     }
-    //     return <div />;
-    // }
-
+    
 
     render() {
         const directory = this.props.campsites.map(campsite => {
             return (
                 <div key={campsite.id} className="col-md-5 m-1">
-                    <Card onClick={() => this.onCampsiteSelect(campsite)}>
+                    <Card onClick={() => this.props.onClick(campsite.id)}>    
                         <CardImg width="100%"  src={campsite.image} alt={campsite.name} />
                         <CardImgOverlay>
                             <CardTitle>{campsite.name}</CardTitle>
@@ -50,14 +27,7 @@ class Directory extends Component {
                 <div className="row">
                     {directory}
                 </div>
-                {/* <div className="row">
-                    <div className="col-md-5 m-1">
-                        {this.renderSelectedCampsite(this.state.selectedCampsite)}
-                    </div>
-                </div> */}
-                <div>
-                    <CampsiteInfo campsite={this.state.selectedCampsite}/> 
-                </div>
+                 
             </div>
         );
     }
