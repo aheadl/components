@@ -16,7 +16,7 @@ class Main extends Component {
     onCampsiteSelect(campsiteId) {
         this.setState({selectedCampsite: campsiteId});
     }
-
+//The filter below, grabs one object and sends to the CampsiteInfo component
     render() {
         return (
             <div>
@@ -27,6 +27,7 @@ class Main extends Component {
                 </Navbar>
                 <Directory campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)}/>
                 <CampsiteInfo campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} />
+                
             </div>
         );
     };
