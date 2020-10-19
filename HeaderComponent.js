@@ -11,7 +11,9 @@ class Header extends Component {
           isNavOpen: false
         };
     }
-
+//Setting a state variable to toggle Navbar
+// ***** Set state variabke above to isNavOpen to true/false based on when we will be showing/hiding content. 
+// ****  Add function toggleNav below to ser the state to true or false
     toggleNav() {
         this.setState({
             isNavOpen: !this.state.isNavOpen
