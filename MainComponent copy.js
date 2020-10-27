@@ -11,8 +11,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { COMMENTS } from '../shared/comments';
 import { PARTNERS } from '../shared/partners';
 import { PROMOTIONS } from '../shared/promotions';
-import About from './AboutComponent';
-
+//import About from './AboutComponent';
+import {About, testPropspassing} from './AboutComponent';
 
 class Main extends Component {
     constructor(props) {
@@ -24,6 +24,18 @@ class Main extends Component {
             promotions: PROMOTIONS
         };
     }
+
+   
+//** My notes**:
+//The filter below, grabs one object and sends to the CampsiteInfo component
+//Render is added as an attribute to <Route below because the campsite object is being passed to Directory
+// Note that unlike the <Route> for the Directory component, you use the attribute component instead of render
+
+// In the render() pass the campsite, promotion and partner objects to the Home page:
+//       use the filter array method to filter for objects where the featured property evaluates to true. 
+//Then, because filter returns an array and you want to pass an object, 
+//you will use [0] to access one object in the array. 
+
 
     render() {
         const HomePage = () => {
